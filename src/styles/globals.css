@@ -2,6 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
+html{
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8c5f0254-310e-424b-8c3b-ae56c7b92b13/d8muz3e-04415d2f-9819-4576-99da-d078da1bf454.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhjNWYwMjU0LTMxMGUtNDI0Yi04YzNiLWFlNTZjN2I5MmIxM1wvZDhtdXozZS0wNDQxNWQyZi05ODE5LTQ1NzYtOTlkYS1kMDc4ZGExYmY0NTQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.s33QyE_Ty0ptzuS3fFULXuLA07lC7Nd64Ye8xZr9VI0");
+  backdrop-filter: blur(40px);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @apply font-mono;
 }
+
+#home, #draft{
+  @apply backdrop-blur-md min-h-[100vh] grid place-content-center bg-slate-100 bg-opacity-20;
+}
+
+.join input{
+ @apply bg-slate-50 bg-opacity-20 rounded-full px-4
+}
+
+.title{
+  @apply  text-sky-950 w-full text-7xl font-extrabold text-center my-6;
+}
+
+#title h1{
+  @apply text-6xl font-bold text-sky-950 w-full pt-4;
+}
+
+#playercommands{
+  @apply text-center text-2xl mt-6 text-gray-900 font-mono font-bold;
+}
+
+button{
+  @apply bg-cyan-950 rounded-full mx-10 text-white px-6 py-1 my-2 hover:bg-cyan-600 hover:text-blue-950 transition-all hover:scale-105 duration-300 shadow-lg;
+}
+
+img{
+  @apply h-28 rounded-3xl;
+}
+
+#maincontent{
+  @apply grid grid-rows-1 grid-cols-3;
+}
+
+
+/* ################### TEAMS ################### */
+
+
+#teamA{
+ @apply  bg-blue-500 bg-opacity-10 backdrop-blur-sm grid grid-rows-3 grid-cols-1 border-l-4 border-blue-700 pl-6;
+}
+
+#teamB{
+  @apply  bg-red-500 bg-opacity-10 backdrop-blur-sm grid grid-rows-3 grid-cols-1 border-r-4 border-red-700 pr-6;
+ }
+ 
+ #team1 > *{
+   @apply flex
+ }
+
+#team2{
+  @apply  bg-red-500 flex
+ }
+
+.player_container{
+ @apply  grid grid-flow-col place-items-center
+}
+
+.player_container span{
+  @apply  justify-self-start text-xl text-white font-mono bg-black bg-opacity-20 px-4 py-1 rounded-xl
+ }
+
+ /* ################### BANS ################### */
+
+
+.bans_container{
+ @apply  grid grid-cols-2 grid-rows-1 w-full;
+}
+
+#bans_teamA, #bans_teamB{
+  @apply grid place-content-center grid-flow-row gap-x-6 text-center text-xl font-mono font-semibold text-white;
+}
+
+#bans_teamA{
+ @apply  bg-red-700 bg-opacity-30 border-r-4 border-red-700 p-4 rounded-l-[2rem];
+}
+
+#bans_teamB{
+  @apply  bg-red-700 bg-opacity-30 border-l-4 border-red-700 p-4 rounded-r-[2rem];
+}
+
+.bans_container{
+  @apply grid place-items-center grid-flow-col gap-x-10
+}
+
+#bans_teamA .container_title, #bans_teamB .container_title{
+  @apply py-3
+}
+
+.banished{
+ @apply  absolute inset-0 bg-black bg-opacity-50 grid place-items-center text-5xl text-opacity-30 rounded-3xl;
+}
+
+.img_wrapper span{
+  @apply opacity-50;
+}
+
+ /* ################### GODS ################### */
+
+
+#gods{
+  @apply  bg-slate-400 bg-opacity-10 flex flex-wrap justify-center items-center gap-4 p-4 col-start-2 col-end-3 text-black font-bold text-lg text-center;
+ }
+
+.gods_wrapper{
+ @apply grid place-items-center cursor-pointer hover:scale-110 duration-200;  
+}
+

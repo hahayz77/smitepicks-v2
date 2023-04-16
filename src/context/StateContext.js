@@ -41,6 +41,10 @@ export const StateContext = ( { children } ) => {
     const [bansB, setBansB] = useState([{},{}]);
     const lastCommand = commands.length-1;
 
+    function RouterDataControl(){
+        
+    }
+
 
     function MainScript(){
         if(commandIndex === 0) { // click select to start picking

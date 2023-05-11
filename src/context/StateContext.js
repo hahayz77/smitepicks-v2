@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { Verification } from '../functions/Verification';
 import { UpdateGodsArray } from '../functions/UpdateGodsArray';
+import fetchJson from '../data/smiteGods.json';
 
 const Context = createContext();
 
@@ -18,6 +19,8 @@ export const StateContext = ( { children } ) => {
         {name: "AnimeMaid" , banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/4/4b/T_Amaterasu_AnimeMaid_Icon.png"},
         {name: "CCSkin" , banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/7/7e/T_Amaterasu_CCSkin_Icon.png"}
     ];
+
+    console.log(fetchJson)
 
     const commands = [
         'Click select to start the picks! ⚫',

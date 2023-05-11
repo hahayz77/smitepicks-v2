@@ -1,12 +1,12 @@
-export function Verification(selectedGod, commandIndex, godsArray, teamA, teamB, bansA, bansB, lastCommand){
+export function Verification(selectedGod, commandIndex, godsArray, teamA, teamB, bansA, bansB, lastCommand) {
     console.log(selectedGod, commandIndex, godsArray, teamA, teamB, bansA, bansB, lastCommand);
 
-    if(!selectedGod) { // no selected God
+    if (!selectedGod || selectedGod === {}) { // no selected God
         alert("You should select a God!");
         return false;
     }
 
-    if(selectedGod.banished === true){ // if the selected god is banished
+    if (selectedGod.banished === true) { // if the selected god is banished
         alert("This god was banished");
         return false;
     }

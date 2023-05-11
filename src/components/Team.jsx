@@ -3,10 +3,11 @@ export function Team({team, bans, name}) {
         <>
             <div id={name}>
                 {team.map((team, index)=>{
+                    console.log(team)
                 return(
                     <div key={`${name}${index}`} className="player_container">
                         <div className="img_container">
-                            <img src={team.image === undefined ? "https://cdn.shopify.com/s/files/1/0735/7415/products/smite-pentakill_2000x.jpg?v=1542612477" : team.image} alt="..."/>
+                            <img src={team.img === undefined ? "https://cdn.shopify.com/s/files/1/0735/7415/products/smite-pentakill_2000x.jpg?v=1542612477" : team.img} alt="..."/>
                         </div>
                         <span>{team.name === undefined ? "Player"+(index+1) : team.name}</span>
                     </div>
@@ -18,7 +19,7 @@ export function Team({team, bans, name}) {
                     {bans.map((bans, index)=>{
                         return(
                                 <div key={`${name}${index}`} className="img_container">
-                                    <img src={bans.image === undefined ? "https://cdn.shopify.com/s/files/1/0735/7415/products/smite-pentakill_2000x.jpg?v=1542612477" : bans.image} alt="..."/>
+                                    <img src={bans.img === undefined ? "https://cdn.shopify.com/s/files/1/0735/7415/products/smite-pentakill_2000x.jpg?v=1542612477" : bans.img} alt="..."/>
                                 </div>
                         )
                     })} 

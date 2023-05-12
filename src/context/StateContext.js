@@ -8,26 +8,14 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
     const test = "StateContext is alive!";
 
-    const fetchData = [
-        { name: "Battleworn", banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/5/56/T_Achilles_Battleworn_Icon.png" },
-        { name: "DeathKnight", banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/9/9b/T_Achilles_DeathKnight_Icon.png" },
-        { name: "Demon", banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/6/67/T_Achilles_Demon_Icon.png" },
-        { name: "KnightOfMordred", banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/6/62/T_Achilles_KnightOfMordred_Icon.png" },
-        { name: "WhiteHot", banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/0/07/T_Agni_WhiteHot_Icon.png" },
-        { name: "DarkAngel", banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/4/44/T_AhMuzenCab_DarkAngel_Icon.png" },
-        { name: "BlackGold", banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/a/a6/T_Amaterasu_BlackGold_Icon.png" },
-        { name: "AnimeMaid", banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/4/4b/T_Amaterasu_AnimeMaid_Icon.png" },
-        { name: "CCSkin", banished: false, picked: [], image: "https://static.wikia.nocookie.net/smite_gamepedia/images/7/7e/T_Amaterasu_CCSkin_Icon.png" }
-    ];
-
     let data = [];
 
     fetchJson.div.a.forEach((god) => {
         const img = god.div.style.replace(/&quot;/g, '').match(/url\((.*?)\)/)[1];
-        const name = god.div.div.div[1].div[0].text; // NAME
-        const banished  = false;
-        const picked = [];
-        data.push({ name, img, banished, picked }); // Push the extracted values to the 'data' array
+        const name = god.div.div.div[1].div[0].text;        // NAME
+        const banished = false;                             // if the god was banished is true
+        const picked = [];                                  // should be A or B => ['a', 'b'], ['a'] or ['b']
+        data.push({ name, img, banished, picked });         // Push the extracted values to the 'data' array
     });
 
     const commands = [
@@ -52,9 +40,9 @@ export const StateContext = ({ children }) => {
     const [bansB, setBansB] = useState([{}, {}]);
     const lastCommand = commands.length - 1;
 
-    function RouterDataControl() {
+    // function RouterDataControl() {
 
-    }
+    // }
 
 
     function MainScript() {
@@ -73,6 +61,7 @@ export const StateContext = ({ children }) => {
             setSelectedGod();   // Updates the useState obj
             setCommandIndex(commandIndex + 1);    // increase the variable to set the next one for the sequence;     
         }
+        console.log(godsArray);
     }
 
     return (

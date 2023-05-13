@@ -3,7 +3,6 @@ export function Team({team, bans, name}) {
         <>
             <div id={name}>
                 {team.map((team, index)=>{
-                    console.log(team)
                 return(
                     <div key={`${name}${index}`} className="player_container">
                         <div className="img_container">

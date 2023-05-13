@@ -61,7 +61,6 @@ export const StateContext = ({ children }) => {
             setSelectedGod();   // Updates the useState obj
             setCommandIndex(commandIndex + 1);    // increase the variable to set the next one for the sequence;     
         }
-        console.log(godsArray);
     }
 
     return (

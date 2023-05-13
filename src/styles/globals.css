@@ -44,7 +44,7 @@ img{
 }
 
 #maincontent{
-  @apply grid grid-rows-1 grid-cols-3 max-h-[80vh];
+  @apply grid grid-rows-1 grid-cols-3 h-[100%];
 }
 
 
@@ -68,7 +68,7 @@ img{
  }
 
 .player_container{
- @apply  grid grid-flow-col place-items-center
+ @apply  grid grid-flow-col place-items-center h-28 w-1/2 place-self-center justify-around
 }
 
 .player_container span{
@@ -106,8 +106,12 @@ img{
  @apply  absolute inset-0 bg-black bg-opacity-50 grid place-items-center text-5xl text-opacity-30 rounded-3xl;
 }
 
+.img_wrapper, .img_container{
+  @apply  overflow-hidden place-items-center grid
+}
+
 .img_wrapper img, .img_container img{
-  @apply  h-40 w-24 object-cover
+  @apply  object-cover overflow-hidden h-32 w-24 
 }
 
 .img_container {

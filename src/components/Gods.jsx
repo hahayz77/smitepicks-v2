@@ -1,7 +1,7 @@
 import { useStateContext } from "../context/StateContext";
 import { PickImageGod } from "../functions/PickImageGod";
 
-export function Gods() {
+export function Gods({height}) {
 
     const { setSelectedGod, commandIndex, bansA, setBansA, bansB, setBansB, teamA, setTeamA, teamB, setTeamB, godsArray } = useStateContext();
 
@@ -11,7 +11,7 @@ export function Gods() {
 
     return (
         <>
-            <div id="gods" className=''>
+            <div id="gods" className='' style={{height: height}}>
                 {godsArray.map((god, index)=>{
                 return(
                     <div key={`godsArray${index}`} className='gods_wrapper' onClick={()=>{

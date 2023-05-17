@@ -1,3 +1,4 @@
+import {useEffect, useRef, useState} from 'react';
 import { Gods } from "@/components/Gods";
 import { Team } from "@/components/Team";
 import { useStateContext } from "@/context/StateContext";
@@ -8,6 +9,13 @@ import Link from "next/link";
 export default function Draft({ draft }) {
   
     const { commands, commandIndex, MainScript, teamA, teamB, bansA, bansB } = useStateContext();
+
+    const ref = useRef(null);
+    const [height, setHeight] = useState(0);
+
+    useEffect(() => {
+      setHeight(ref.current.clientHeight);
+    }, []);
 
     return (
         <>
@@ -20,9 +28,9 @@ export default function Draft({ draft }) {
                             <p><span>{draft.id}</span></p>
                         </div>
                     </div>
-                    <div id='maincontent' className="fluid-container">
+                    <div id='maincontent' ref={ref} className="fluid-container">
                         <Team team={teamA} bans={bansA} name={"teamA"}/>
-                        <Gods />
+                        <Gods height={height}/>
                         <Team team={teamB} bans={bansB} name={"teamB"}/>
                     </div>
             </div>

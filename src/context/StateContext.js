@@ -1,7 +1,8 @@
 import { createContext, useContext, useState } from "react";
-import { Verification } from '../functions/Verification';
+import Verification from '../functions/Verification';
 import { UpdateGodsArray } from '../functions/UpdateGodsArray';
 import fetchJson from '../data/smiteGods.json';
+import { PickImageGod } from "@/functions/PickImageGod";
 
 const Context = createContext();
 
@@ -55,7 +56,7 @@ export const StateContext = ({ children }) => {
         let validation = Verification(selectedGod, commandIndex, godsArray, teamA, teamB, bansA, bansB, lastCommand);
         if (validation === false || JSON.stringify(selectedGod) === '{}') { // verify if all logic is ok!
             setSelectedGod();   // Updates the useState obj
-            return;
+            PickImageGod({}, setSelectedGod, commandIndex, bansA, setBansA, bansB, setBansB, teamA, setTeamA, teamB, setTeamB); // RESET IMG PICKING
         } else {
             UpdateGodsArray(selectedGod, godsArray, setGodsArray, commandIndex);   //persists alterations on godsArray
             setSelectedGod();   // Updates the useState obj

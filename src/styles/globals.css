@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
   box-sizing: border-box;
   overflow-x: hidden;
   width: 100%;
@@ -15,35 +15,54 @@ html{
   @apply font-mono;
 }
 
-#home, #draft{
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #b1998c;
+}
+
+*::-webkit-scrollbar {
+  width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-transparent shadow-lg
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(8 51 68);
+  border-radius: 5px;
+}
+
+#home,
+#draft {
   @apply backdrop-blur-md h-full grid place-content-center bg-slate-100 bg-opacity-20;
 }
 
-.join input{
- @apply bg-slate-50 bg-opacity-20 rounded-full px-4
+.join input {
+  @apply bg-slate-50 bg-opacity-20 rounded-full px-4
 }
 
-.title{
-  @apply  text-sky-950 w-full text-6xl font-extrabold text-center my-4;
+.title {
+  @apply text-sky-950 w-full text-6xl font-extrabold text-center my-4;
 }
 
-#title h1{
+#title h1 {
   @apply text-6xl font-bold text-sky-950 w-full pt-4;
 }
 
-#playercommands{
+#playercommands {
   @apply text-center text-2xl mt-6 text-gray-900 font-mono font-bold;
 }
 
-button{
+button {
   @apply bg-cyan-950 rounded-full mx-10 text-white px-6 py-1 my-2 hover:bg-cyan-600 hover:text-blue-950 transition-all hover:scale-105 duration-300 shadow-lg;
 }
 
-img{
+img {
   @apply h-28 rounded-3xl;
 }
 
-#maincontent{
+#maincontent {
   @apply grid grid-rows-1 grid-cols-3 h-fit w-full overflow-hidden;
 }
 
@@ -51,80 +70,83 @@ img{
 /* ################### TEAMS ################### */
 
 #teamA #teamB {
- @apply backdrop-blur-sm grid grid-cols-1
+  @apply backdrop-blur-sm grid grid-cols-1
 }
 
-#teamA{
- @apply  bg-blue-500 bg-opacity-10 border-l-4 border-blue-700 pl-6;
+#teamA {
+  @apply bg-blue-500 bg-opacity-10 border-l-4 border-blue-700 pl-6;
 }
 
-#teamB{
-  @apply  bg-red-500 bg-opacity-10 border-r-4 border-red-700 pr-6;
- }
-
-.player_container{
- @apply  grid grid-flow-col place-items-center h-28 w-1/2 place-self-center justify-around
+#teamB {
+  @apply bg-red-500 bg-opacity-10 border-r-4 border-red-700 pr-6;
 }
 
-.player_container span{
-  @apply  justify-self-start text-xl text-white font-mono bg-black bg-opacity-20 px-4 py-1 rounded-xl
- }
-
- /* ################### BANS ################### */
-
-
-.bans_container{
- @apply  grid grid-cols-2 grid-rows-1 w-full max-h-24
+.player_container {
+  @apply grid grid-flow-col place-items-center h-28 w-1/2 place-self-center justify-around
 }
 
-#bans_teamA, #bans_teamB{
+.player_container span {
+  @apply justify-self-start text-xl text-white font-mono bg-black bg-opacity-20 px-4 py-1 rounded-xl
+}
+
+/* ################### BANS ################### */
+
+
+.bans_container {
+  @apply grid grid-cols-2 grid-rows-1 w-full max-h-24
+}
+
+#bans_teamA,
+#bans_teamB {
   @apply grid place-content-center grid-flow-row gap-x-6 text-center text-xl font-mono font-semibold text-white my-6;
 }
 
-#bans_teamA{
- @apply  bg-red-700 bg-opacity-30 border-r-4 border-red-700 p-4 rounded-l-[2rem];
+#bans_teamA {
+  @apply bg-red-700 bg-opacity-30 border-r-4 border-red-700 p-4 rounded-l-[2rem];
 }
 
-#bans_teamB{
-  @apply  bg-red-700 bg-opacity-30 border-l-4 border-red-700 p-4 rounded-r-[2rem];
+#bans_teamB {
+  @apply bg-red-700 bg-opacity-30 border-l-4 border-red-700 p-4 rounded-r-[2rem];
 }
 
-.bans_container{
+.bans_container {
   @apply grid place-items-center grid-flow-col gap-x-10
 }
 
-#bans_teamA .container_title, #bans_teamB .container_title{
+#bans_teamA .container_title,
+#bans_teamB .container_title {
   @apply py-1
 }
 
-.banished{
- @apply  absolute bg-black bg-opacity-50 grid place-items-center text-5xl text-opacity-30 rounded-3xl h-24 w-20;
+.banished {
+  @apply absolute bg-black bg-opacity-50 grid place-items-center text-5xl text-opacity-30 rounded-3xl h-24 w-20;
 }
 
-.img_wrapper, .img_container{
-  @apply  overflow-hidden place-items-center grid h-32 w-28
+.img_wrapper,
+.img_container {
+  @apply overflow-hidden place-items-center grid h-32 w-28
 }
 
-.img_wrapper img, .img_container img{
-  @apply  object-cover h-24 w-20 object-top
+.img_wrapper img,
+.img_container img {
+  @apply object-cover h-24 w-20 object-top
 }
 
 .img_container {
   @apply p-3
 }
 
-.img_wrapper span{
+.img_wrapper span {
   @apply opacity-50;
 }
 
- /* ################### GODS ################### */
+/* ################### GODS ################### */
 
 
-#gods{
-  @apply  bg-slate-400 bg-opacity-10 grid grid-flow-row grid-cols-4 place-items-center gap-4 p-4 col-start-2 col-end-3 text-black font-bold text-sm text-center h-[75vh] overflow-auto overflow-x-hidden;
- }
-
-.gods_wrapper{
- @apply grid place-items-center cursor-pointer hover:scale-110 duration-200;  
+#gods {
+  @apply bg-slate-400 bg-opacity-10 grid grid-flow-row grid-cols-4 place-items-center gap-4 p-4 col-start-2 col-end-3 text-black font-bold text-sm text-center h-[75vh] overflow-auto overflow-x-hidden;
 }
 
+.gods_wrapper {
+  @apply grid place-items-center cursor-pointer hover:scale-110 duration-200;
+}

@@ -1,13 +1,15 @@
+import {toast} from "react-hot-toast";
+
 export function Verification(selectedGod, commandIndex, godsArray, teamA, teamB, bansA, bansB, lastCommand, pickedCheck) {
     // console.log(selectedGod, commandIndex, godsArray, teamA, teamB, bansA, bansB, lastCommand);
 
     if (!selectedGod || selectedGod === {}) { // no selected God
-        alert("You should select a God!");
+        toast.error("You should select a God!", {style: {backgroundColor: '#083344',  color: '#fff'}});
         return false;
     }
 
     if (selectedGod.banished === true) { // if the selected god is banished
-        alert("This god was banished");
+        toast.error("This god was banished!", {style: {backgroundColor: '#083344',  color: '#fff'}});
         return false;
     }
 
@@ -23,7 +25,8 @@ export function Verification(selectedGod, commandIndex, godsArray, teamA, teamB,
     else if( commandIndex === 8 && selectedGod.picked.some( e=> e === 'b') ) pickedCheck = true;
 
     if (pickedCheck) {
-        alert("This god was aredy picked!");
+        toast.error("This god was aredy picked!", {style: {backgroundColor: '#083344',  color: '#fff'}});
+
         return false;
     }
  
@@ -32,3 +35,5 @@ export function Verification(selectedGod, commandIndex, godsArray, teamA, teamB,
     // console.log("###########################")
     return true; // if is all ok
 }
+
+export default Verification;

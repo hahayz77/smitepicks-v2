@@ -1,3 +1,4 @@
+import { toast } from "react-hot-toast";
 import { useStateContext } from "../context/StateContext";
 import { PickImageGod } from "../functions/PickImageGod";
 
@@ -19,7 +20,7 @@ export function Gods({height}) {
                             handler(god); // Execute the handler function
                         } else {
                             PickImageGod({}, setSelectedGod, commandIndex, bansA, setBansA, bansB, setBansB, teamA, setTeamA, teamB, setTeamB);
-                            alert("This god was banished!");
+                            toast.error("This god was banished!", {style: {backgroundColor: '#083344',  color: '#fff'}})
                         }
                       }}>
                         <span>{god.name}</span>

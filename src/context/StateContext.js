@@ -55,8 +55,9 @@ export const StateContext = ({ children }) => {
 
         let validation = Verification(selectedGod, commandIndex, godsArray, teamA, teamB, bansA, bansB, lastCommand);
         if (validation === false || JSON.stringify(selectedGod) === '{}') { // verify if all logic is ok!
-            setSelectedGod();   // Updates the useState obj
             PickImageGod({}, setSelectedGod, commandIndex, bansA, setBansA, bansB, setBansB, teamA, setTeamA, teamB, setTeamB); // RESET IMG PICKING
+            setSelectedGod();   // Updates the useState obj
+            return;
         } else {
             UpdateGodsArray(selectedGod, godsArray, setGodsArray, commandIndex);   //persists alterations on godsArray
             setSelectedGod();   // Updates the useState obj
